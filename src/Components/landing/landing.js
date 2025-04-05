@@ -93,7 +93,7 @@ export default function Landing() {
     gridContainer.style.gridTemplateColumns = '50% 50%';
     gridContainer.style.gridTemplateRows = '50% 50%';
     
-    // Create four grid items for the background images
+    // Create four grid items for the background image
     const images = ['body1.png', 'body2.png', 'body3.jpg', 'body4.jpg'];
     const positions = ['top left', 'top right', 'bottom left', 'bottom right'];
     
