@@ -1,0 +1,365 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700;800;900&display=swap');
+
+/* Wrapped all styles within #campus-ambassador-page to scope them */
+#campus-ambassador-page {
+  /* Set background image for the entire page */
+  background-image: url('/public/teambg.jpeg'); /* Update path based on your project structure */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+
+  /* Base Styles */
+  .ca-container{
+    font-family: 'Exo 2', sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    color: #e0e0e0;
+  }
+
+  /* Header Styles */
+  .ca-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem 0;
+    background: linear-gradient(135deg, rgba(26, 22, 255, 0.8) 0%, rgba(0, 255, 140, 0.8) 100%);
+    color: #f0f0f0;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(26, 22, 255, 0.5), 0 0 30px rgba(0, 255, 140, 0.3);
+  }
+
+  .ca-header h1 {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(26, 22, 255, 0.8), 0 0 20px rgba(0, 255, 140, 0.6);
+  }
+
+  .ca-tagline {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: #ffffff;
+    text-shadow: 0 0 5px rgba(26, 22, 255, 0.6);
+  }
+
+  /* Section Styles - made more specific to avoid affecting other sections */
+  .ca-section {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background-color: rgba(15, 15, 20, 0.7);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(26, 22, 255, 0.3);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ca-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #1a16ff, #00ff8c);
+  }
+
+  .ca-section h2 {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+    letter-spacing: 1px;
+    border-bottom: 1px solid rgba(0, 255, 140, 0.5);
+    padding-bottom: 0.5rem;
+    text-shadow: 0 0 5px rgba(0, 255, 140, 0.5);
+  }
+
+  /* Benefits Grid */
+  .ca-benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .ca-benefit-card {
+    padding: 1.5rem;
+    border-radius: 8px;
+    background-color: rgba(20, 20, 30, 0.7);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(26, 22, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ca-benefit-card::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #1a16ff, #00ff8c);
+    transform: scaleX(0.3);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+
+  .ca-benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(26, 22, 255, 0.2), 0 8px 20px rgba(0, 255, 140, 0.2);
+  }
+
+  .ca-benefit-card:hover::after {
+    transform: scaleX(1);
+  }
+
+  .ca-benefit-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #1a16ff;
+    text-shadow: 0 0 10px rgba(26, 22, 255, 0.8);
+  }
+
+  .ca-benefit-card h3 {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+    color: #ffffff;
+  }
+
+  /* Responsibilities List */
+  .ca-responsibilities ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .ca-responsibilities li {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid rgba(26, 22, 255, 0.2);
+    position: relative;
+    padding-left: 1.5rem;
+    color: #d0d0d0;
+  }
+
+  .ca-responsibilities li:before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #00ff8c;
+    font-weight: bold;
+    text-shadow: 0 0 5px rgba(0, 255, 140, 0.5);
+  }
+
+  /* Form Styles */
+  .ca-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .ca-form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .ca-form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+  }
+
+  .ca-form-group input,
+  .ca-form-group select,
+  .ca-form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid rgba(26, 22, 255, 0.3);
+    border-radius: 4px;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 0.9rem;
+    background-color: rgba(15, 15, 20, 0.6);
+    color: #ffffff;
+    caret-color: #00ff8c;
+  }
+
+  .ca-form-group input:focus,
+  .ca-form-group select:focus,
+  .ca-form-group textarea:focus {
+    outline: none;
+    border-color: #00ff8c;
+    box-shadow: 0 0 10px rgba(0, 255, 140, 0.3), 0 0 5px rgba(26, 22, 255, 0.2);
+    background-color: rgba(15, 15, 20, 0.8);
+  }
+
+  .ca-form-group textarea {
+    resize: vertical;
+  }
+
+  .ca-submit-btn {
+    grid-column: 1 / -1;
+    background: linear-gradient(135deg, #1a16ff 0%, #00ff8c 100%);
+    color: #ffffff;
+    border: none;
+    padding: 1rem 2rem;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+  }
+
+  .ca-submit-btn:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #00ff8c 0%, #1a16ff 100%);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .ca-submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(26, 22, 255, 0.4), 0 5px 15px rgba(0, 255, 140, 0.3);
+  }
+
+  .ca-submit-btn:hover:before {
+    opacity: 1;
+  }
+
+  /* Success Message */
+  .ca-success-message {
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .ca-success-message h3 {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #00ff8c;
+    text-shadow: 0 0 10px rgba(0, 255, 140, 0.5);
+  }
+
+  /* FAQ Styles */
+  .ca-faq-item {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(26, 22, 255, 0.2);
+  }
+
+  .ca-faq-item:last-child {
+    border-bottom: none;
+  }
+
+  .ca-faq-item h3 {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    color: #ffffff;
+  }
+
+  .ca-faq-item h3:before {
+    content: "Q: ";
+    color: #1a16ff;
+    font-weight: bold;
+    text-shadow: 0 0 5px rgba(26, 22, 255, 0.8);
+  }
+
+  .ca-faq-item p {
+    color: #d0d0d0;
+  }
+
+  /* Footer Styles */
+  .ca-footer {
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.9rem;
+    background: linear-gradient(135deg, rgba(26, 22, 255, 0.8) 0%, rgba(0, 255, 140, 0.8) 100%);
+    color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(26, 22, 255, 0.3), 0 0 20px rgba(0, 255, 140, 0.2);
+  }
+
+  .ca-footer a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    position: relative;
+  }
+
+  .ca-footer a:after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, #ffffff, transparent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+
+  .ca-footer a:hover {
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+  }
+
+  .ca-footer a:hover:after {
+    transform: scaleX(1);
+  }
+
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .ca-header h1 {
+      font-size: 1.8rem;
+    }
+    
+    .ca-tagline {
+      font-size: 1rem;
+    }
+    
+    .ca-section h2 {
+      font-size: 1.5rem;
+    }
+    
+    .ca-form {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Add to your Ca.css file */
+  .ca-error-message {
+    color: #d32f2f;
+    margin-top: 15px;
+    font-weight: 500;
+  }
+
+  .ca-submit-btn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+}

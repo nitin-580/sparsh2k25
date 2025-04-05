@@ -1,0 +1,128 @@
+#main-login {
+  height: 100vh;
+  width: 100%;
+  /* padding-top: 100px; */
+  z-index: 2;
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container {
+  height: 100%;
+  background: #a3a3a3;
+  width: 100%;
+  box-shadow: 0px 5px 20px black;
+  display: flex;
+}
+
+.login-container .login-container-left {
+  height: 100%;
+  /* background: black; */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: black;
+  justify-content: center;
+  z-index: 10;
+}
+
+.login-container .login-container-left .sign-in-button {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  cursor: pointer;
+}
+
+.login-container .login-container-left .header {
+  font-size: 14px;
+  font-weight: 600;
+  padding-bottom: 20px;
+  color: #65ffa3;
+  width: 30%;
+  position: relative;
+}
+
+@media screen and (max-width: 720px) {
+  .login-container .login-container-left .header {
+
+    width: 80%;
+  
+  }
+}
+
+.login-container .login-container-left .header .login-button {
+  background: white;
+  padding: 6px 14px 6px 14px;
+  color: black;
+  
+}
+.login-container .login-container-left .header .login-button-unactive {
+  /* background: white; */
+  padding: 6px 14px 6px 0px;
+  color: white;
+  cursor: pointer;
+  /* margin-left: 10px; */
+}
+
+.login-container .login-container-left .header .login-button-unactive:hover {
+  background: white;
+  padding: 6px 14px 6px 14px;
+  color: black;
+  /* margin-left: 10px; */
+  transition: 0.6s;
+  cursor: pointer;
+}
+
+.login-container .login-container-left .header .SignUp-button {
+  background: white;
+  padding: 6px 14px 6px 14px;
+  color: black;
+  margin-left: 10px;
+}
+
+.login-container .login-container-left .header .SignUp-button-unactive {
+  /* background: white; */
+  padding: 6px 14px 6px 14px;
+  color: white;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.login-container .login-container-left .header .SignUp-button-unactive:hover {
+  background: white;
+  padding: 6px 14px 6px 14px;
+  color: black;
+  margin-left: 10px;
+  transition: 0.6s;
+  cursor: pointer;
+}
+
+.login-container-right {
+  height: 100%;
+  width: 40%;
+  object-fit: cover;
+  background: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media screen and (max-width: 720px) {
+  .login-container {
+    height: 100%;
+    /* background: yellow; */
+    /* padding: 50px; */
+    /* width: 900px; */
+    position: relative;
+  }
+  .login-container .login-container-left {
+    width: 100%;
+    /* gap: 10px 10px; */
+  }
+  .login-container-right {
+    display: none;
+  }
+}

@@ -1,0 +1,505 @@
+/* Events Page Styles for Sparsh - Scoped to prevent affecting other pages */
+
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700;800;900&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url('/public/event2.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+  color: #ffffff;
+  font-family: 'Exo 2', sans-serif;
+}
+
+/* Root variables for the events page */
+.events-container {
+  --primary-gradient: linear-gradient(135deg, #ff3e00, #ff7e46);
+  --secondary-gradient: linear-gradient(135deg, #0075ff, #00a1ff);
+  --card-background: rgba(25, 25, 40, 0.8);
+  --text-primary: #ffffff;
+  --text-secondary: #a9b2ff;
+  --accent-gradient: linear-gradient(135deg, #ffc107, #ffdb58);
+  --border-color: #4a4fc9;
+  --card-hover-shadow: 0 0 20px rgba(89, 95, 255, 0.7);
+  --neon-primary: 0 0 5px #d5491b, 0 0 10px #ff3e00, 0 0 20px #d33d0b;
+  --neon-secondary: 0 0 5px #0075ff, 0 0 10px #0075ff, 0 0 20px #0075ff;
+  --neon-accent: 0 0 5px #ffc107, 0 0 10px #ffc107, 0 0 20px #ffc107;
+}
+
+/* All styles prefixed with .events- classes to scope them to this component */
+.events-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  font-family: 'Exo 2', sans-serif;
+  color: #ffffff;
+  position: relative;
+  /* Remove overflow:hidden to ensure background image is fully visible */
+}
+
+.events-container .search-bar input,
+.events-container .category-filters button,
+.events-container .event-actions button {
+    font-family: 'Exo 2', sans-serif;
+}
+
+/* Header Styles */
+.events-container .events-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+  z-index: 1;
+}
+
+.events-container .events-header h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  position: relative;
+  display: inline-block;
+  /* Removed background-clip and -webkit-background-clip */
+  /* Removed transparent color */
+  color: #ffffff; /* Changed to solid white color instead of transparent */
+  /* Removed text-shadow with neon effect */
+}
+
+.events-container .events-header h1::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background-image: var(--secondary-gradient);
+  box-shadow: var(--neon-secondary);
+}
+
+.events-container .events-header p {
+  font-size: 1.2rem;
+  /* Changed from var(--text-secondary) which was #a9b2ff (darker blue) */
+  color: #d1e6ff; /* Changed to a lighter blue color */
+  max-width: 700px;
+  margin: 2rem auto 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Filters Styles */
+.events-container .events-filters {
+  margin-bottom: 3rem;
+  position: relative;
+  z-index: 1;
+}
+
+.events-container .search-bar {
+  margin-bottom: 1.5rem;
+}
+
+.events-container .search-bar input {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  border: 2px solid var(--border-color);
+  border-radius: 50px;
+  font-size: 1rem;
+  font-family: 'Orbitron', sans-serif;
+  transition: all 0.3s ease;
+  outline: none;
+  background-color: rgba(20, 20, 40, 0.6);
+  color: #ffffff;
+  box-shadow: 0 0 10px rgba(89, 95, 255, 0.3);
+}
+
+.events-container .search-bar input:focus {
+  border-color: #0075ff;
+  box-shadow: var(--neon-secondary);
+}
+
+.events-container .category-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  justify-content: center;
+}
+
+.events-container .category-filters button {
+  padding: 0.7rem 1.5rem;
+  background-color: rgba(20, 20, 40, 0.6);
+  border: 1px solid var(--border-color);
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  font-family: 'Orbitron', sans-serif;
+  transition: all 0.3s ease;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.events-container .category-filters button:hover {
+  background-image: linear-gradient(135deg, rgba(255, 62, 0, 0.2), rgba(255, 126, 70, 0.2));
+  border-color: #ff3e00;
+  color: #ff7e46;
+  box-shadow: var(--neon-primary);
+}
+
+.events-container .category-filters button.active {
+  background-image: var(--primary-gradient);
+  color: white;
+  border: none;
+  box-shadow: var(--neon-primary);
+}
+
+/* Events Grid Styles */
+.events-container .events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.events-container .event-card {
+  background-color: var(--card-background);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(74, 79, 201, 0.4);
+  backdrop-filter: blur(5px);
+}
+
+.events-container .event-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: var(--card-hover-shadow);
+  border-color: var(--border-color);
+}
+
+.events-container .event-image {
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.events-container .event-image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(15, 16, 53, 0), rgba(15, 16, 53, 0.6));
+  pointer-events: none;
+}
+
+.events-container .event-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.events-container .event-card:hover .event-image img {
+  transform: scale(1.08);
+}
+
+.events-container .event-details {
+  padding: 1.5rem;
+}
+
+.events-container .event-details h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.8rem;
+  color: var(--text-primary);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.events-container .event-description {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.events-container .event-info {
+  margin-bottom: 1.2rem;
+  background-color: rgba(20, 20, 40, 0.4);
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.events-container .event-info p {
+  margin: 0.4rem 0;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.events-container .event-info p strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.events-container .event-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.events-container .event-actions button {
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  flex: 1;
+  font-family: 'Orbitron', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.events-container .details-btn {
+  background-color: transparent;
+  border: 2px solid #0075ff;
+  color: #0075ff;
+}
+
+.events-container .details-btn:hover {
+  background-image: var(--secondary-gradient);
+  border: 2px solid transparent;
+  color: white;
+  box-shadow: var(--neon-secondary);
+}
+
+.events-container .register-btn {
+  background-image: var(--primary-gradient);
+  border: none;
+  color: white;
+}
+
+.events-container .register-btn:hover {
+  background-image: linear-gradient(135deg, #e73600, #ff6b3d);
+  opacity: 0.95;
+  box-shadow: var(--neon-primary);
+}
+
+.events-container .no-events {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem;
+  color: #ffffff;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .events-container .events-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+  
+  .events-container .events-header h1 {
+    font-size: 2.5rem;
+  }
+  
+  .events-container .category-filters {
+    gap: 0.5rem;
+  }
+  
+  .events-container .category-filters button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .events-container .events-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .events-container .events-header h1 {
+    font-size: 2rem;
+  }
+  
+  .events-container .events-header p {
+    font-size: 1rem;
+  }
+  
+  .events-container .category-filters button {
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+  }
+  
+  .events-container .event-actions {
+    flex-direction: column;
+  }
+}
+/* Registration Modal Styles */
+.registration-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.registration-modal-content {
+  background-color: #3c0a0ad8;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #777;
+}
+
+.close-button:hover {
+  color: #000;
+}
+
+.registration-form {
+  margin-top: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.submit-btn {
+  background-color: #4a00e0;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.submit-btn:hover {
+  background-color: #3500a0;
+}
+
+.submit-btn:disabled {
+  background-color: #9e87d1;
+  cursor: not-allowed;
+}
+
+.error-message {
+  color: #e74c3c;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.success-message {
+  text-align: center;
+  padding: 1.5rem 0;
+}
+
+.success-message h3 {
+  color: #27ae60;
+  margin-bottom: 1rem;
+}
+
+.close-success-btn {
+  background-color: #4a00e0;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 1.5rem;
+  transition: background-color 0.3s;
+}
+
+.close-success-btn:hover {
+  background-color: #3500a0;
+}
+
+/* Add this to your events.css file */
+
+.event-image.square {
+  position: relative;
+  width: 100%;
+  padding-top: 100%; /* Creates a 1:1 aspect ratio */
+  overflow: hidden;
+}
+
+.event-image.square img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* This maintains aspect ratio while filling the square */
+  object-position: center; /* Centers the image */
+}
+
+/* Optional: Add a smooth transition for hover effects */
+.event-image.square img {
+  transition: transform 0.3s ease;
+}
+
+.event-image.square:hover img {
+  transform: scale(1.05);
+}
+
+/* If you need to adjust the event card layout to accommodate square images */
+.event-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.event-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.event-actions {
+  margin-top: auto;
+}

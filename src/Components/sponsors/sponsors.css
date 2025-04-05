@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700&display=swap');
+
+.sponsors-container {
+  position: relative;
+  font-family: 'Exo 2', sans-serif;
+  padding-top: 5rem; /* Match the navbar height to ensure content starts below it */
+}
+
+/* Enhanced Space theme elements */
+.space-stars {
+  position: fixed; /* Changed from absolute to fixed for full coverage */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, #ffffff, rgba(0, 0, 0, 0)),
+    radial-gradient(2px 2px at 40px 70px, #ffffff, rgba(0, 0, 0, 0)),
+    radial-gradient(2px 2px at 50px 160px, #ffffff, rgba(0, 0, 0, 0)),
+    radial-gradient(2px 2px at 90px 40px, #ffffff, rgba(0, 0, 0, 0)),
+    radial-gradient(2px 2px at 130px 80px, #ffffff, rgba(0, 0, 0, 0)),
+    radial-gradient(2px 2px at 160px 120px, #ffffff, rgba(0, 0, 0, 0)),
+    /* Added more stars for density */
+    radial-gradient(1px 1px at 200px 190px, #ffffff, rgba(0, 0, 0, 0)),
+    radial-gradient(1px 1px at 220px 250px, #ffffff, rgba(0, 0, 0, 0)),
+    radial-gradient(1px 1px at 260px 220px, #ffffff, rgba(0, 0, 0, 0)),
+    radial-gradient(1px 1px at 300px 270px, #ffffff, rgba(0, 0, 0, 0));
+  background-repeat: repeat;
+  background-size: 300px 300px; /* Increased size for better distribution */
+  animation: twinkle 5s ease-in-out infinite;
+  opacity: 0.5;
+  z-index: 0; /* Ensure this is below the navbar */
+  pointer-events: none; /* Ensure clicks pass through to elements below */
+}
+
+/* Add second layer of stars with different animation timing */
+.space-stars:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(1px 1px at 25px 35px, #ffffff, rgba(0, 0, 0, 0)),
+    radial-gradient(1px 1px at 45px 75px, #ffffff, rgba(0, 0, 0, 0)),
+    radial-gradient(1px 1px at 55px 165px, #ffffff, rgba(0, 0, 0, 0)),
+    radial-gradient(1px 1px at 95px 45px, #ffffff, rgba(0, 0, 0, 0)),
+    radial-gradient(1px 1px at 135px 85px, #ffffff, rgba(0, 0, 0, 0)),
+    radial-gradient(1px 1px at 165px 125px, #ffffff, rgba(0, 0, 0, 0));
+  background-repeat: repeat;
+  background-size: 300px 300px;
+  animation: twinkle 7s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes twinkle {
+  0% { opacity: 0.5; }
+  50% { opacity: 0.8; }
+  100% { opacity: 0.5; }
+}
+
+.space-planet {
+  position: absolute;
+  border-radius: 50%;
+  z-index: 2; /* Above stars but below navbar */
+  pointer-events: none; /* Ensure planets don't block clicks */
+}
+
+.planet1 {
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle at 30% 30%, #65FFA3, #15803d);
+  top: 20%;
+  left: -50px;
+  box-shadow: 0 0 30px rgba(101, 255, 163, 0.3);
+}
+
+.planet2 {
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle at 70% 30%, #6366F1, #1E40AF);
+  bottom: 15%;
+  right: -70px;
+  box-shadow: 0 0 40px rgba(99, 102, 241, 0.3);
+}
+
+/* Fixed Download button styles */
+.download-button {
+  display: flex;
+  position: absolute;
+  top: 150px;
+  right: 50px;
+  background-color: rgba(21, 128, 61, 0.8);
+  color: white;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(101, 255, 163, 0.4);
+  z-index: 10; /* Increased z-index to ensure it's above other elements */
+  text-decoration: none;
+  font-family: 'Exo 2', sans-serif;
+  cursor: pointer; /* Make sure cursor changes to pointer */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Add hover effect */
+}
+
+.download-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(101, 255, 163, 0.6);
+}
+
+.download-button-left {
+  padding: 10px 15px;
+  font-weight: 500;
+  position: relative;
+  z-index: 11; /* Higher than parent */
+}
+
+.download-button-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(101, 255, 163, 0.7);
+  padding: 0 10px;
+  position: relative;
+  z-index: 11; /* Higher than parent */
+}
+
+.download-button-mobile {
+  display: flex;
+  background-color: rgba(21, 128, 61, 0.8);
+  color: white;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(101, 255, 163, 0.4);
+  text-decoration: none;
+  margin-top: 30px;
+  font-family: 'Exo 2', sans-serif;
+  z-index: 10; /* Increased z-index */
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.download-button-mobile:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(101, 255, 163, 0.6);
+}
+
+/* Slide animation for showcase */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-250px * 7));
+  }
+}
+
+/* Loading overlay */
+.loading-overlay {
+  position: fixed;
+  top: 5rem; /* Start below the navbar */
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 5rem); /* Adjust height to not cover navbar */
+  background-color: #050A30;
+  z-index: 9; /* Above content, below navbar */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Content wrapper */
+.sponsors-content {
+  position: relative;
+  z-index: 3; /* Above decorative elements but below navbar */
+  padding-top: 140px; /* Space for navbar plus some extra padding */
+}
+
+/* Responsive grid adjustments */
+@media (max-width: 1024px) {
+  .planet1 {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .planet2 {
+    width: 130px;
+    height: 130px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sponsors-container {
+    padding-top: 4rem; /* Match the navbar height in mobile view */
+  }
+  
+  .loading-overlay {
+    top: 4rem;
+    height: calc(100vh - 4rem);
+  }
+  
+  .sponsors-content {
+    padding-top: 100px; /* Reduced padding for mobile */
+  }
+}
+
+@media (max-width: 720px) {
+  .download-button {
+    display: none;
+  }
+  
+  .download-button-mobile {
+    display: flex;
+    width: 80%; /* Make button wider on mobile */
+    margin: 30px auto; /* Center it */
+    padding: 12px 0; /* More padding */
+    justify-content: center;
+  }
+  
+  .planet1, .planet2 {
+    opacity: 0.3 !important;
+  }
+}

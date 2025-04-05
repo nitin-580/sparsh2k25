@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Babylonica&family=Karla&family=Nunito+Sans:ital,wght@1,200&family=Permanent+Marker&family=Quicksand:wght@300&family=Raleway&family=Roboto+Condensed&family=Rubik:wght@300&display=swap");
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  align-items: center;
+  margin: 47px 10px;
+  background: white;
+  font-family: "Rubik", sans-serif;
+  z-index: 10;
+  cursor: pointer;
+  height: auto;
+}
+.card:hover {
+  transform: scale(1.05);
+  transition: 0.2s ease;
+}
+
+.img {
+  height: 250px;
+  width: 250px;
+  margin: 20px 20px;
+}
+
+.content {
+  width: 250px;
+  margin-bottom: 20px;
+}
+
+.heading-news {
+  font-weight: 600;
+  font-size: 2.5rem;
+  color: #064e3b;
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+  object-fit: contain;
+  margin-bottom: 10px;
+  
+}
+
+.text {
+  overflow: hidden
+}

@@ -1,0 +1,14 @@
+#news{
+  border: 2px solid black;
+  padding-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    /* position: absolute; */
+    margin: auto;
+    background: #000;
+    /* z-index: */
+    /* height: 100vh; */
+}
+

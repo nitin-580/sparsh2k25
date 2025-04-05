@@ -1,0 +1,782 @@
+/* Font imports */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+.team-page {
+  background-color: #050511; /* Dark space color that appears immediately */
+  position: relative;
+  font-family: 'Exo 2', sans-serif;
+  color: #fff;  
+  min-height: 100vh;
+  overflow: hidden;
+  padding: 60px 0;
+  z-index: 1; /* Ensure higher z-index than events page */
+}
+
+/* Stars using pseudo-elements */
+.team-space-background::before {
+  content: '';
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  box-shadow: 
+    1343px 1831px #FFF, 229px 853px #FFF, 1800px 760px #FFF,
+    1775px 1086px #FFF, 1187px 661px #FFF, 1632px 1450px #FFF,
+    432px 304px #FFF, 1538px 323px #FFF, 465px 1198px #FFF,
+    1824px 1359px #FFF, 1137px 943px #FFF, 211px 933px #FFF,
+    1212px 967px #FFF, 370px 1053px #FFF, 1104px 40px #FFF,
+    271px 442px #FFF, 1884px 1939px #FFF, 1503px 1723px #FFF,
+    1134px 1302px #FFF, 201px 828px #FFF, 475px 870px #FFF,
+    1542px 43px #FFF, 1362px 308px #FFF, 985px 1233px #FFF,
+    203px 1878px #FFF, 994px 553px #FFF, 1761px 1678px #FFF,
+    583px 400px #FFF, 283px 1291px #FFF, 799px 701px #FFF;
+  animation: animateStars 50s linear infinite;
+}
+
+.team-space-background::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: transparent;
+  box-shadow: 
+    779px 1331px #FFF, 324px 42px #FFF, 821px 598px #FFF,
+    1175px 1018px #FFF, 1003px 681px #FFF, 503px 149px #FFF,
+    738px 60px #FFF, 395px 1165px #FFF, 859px 1285px #FFF,
+    1732px 264px #FFF, 423px 1205px #FFF, 1232px 1459px #FFF,
+    1492px 147px #FFF, 869px 485px #FFF, 312px 756px #FFF,
+    921px 1724px #FFF, 172px 1004px #FFF, 1184px 1932px #FFF,
+    1137px 186px #FFF, 761px 1531px #FFF, 306px 1986px #FFF,
+    822px 906px #FFF, 1179px 671px #FFF, 1594px 183px #FFF;
+  animation: animateStars 100s linear infinite;
+}
+
+@keyframes animateStars {
+  from { transform: translateY(0); }
+  to { transform: translateY(-2000px); }
+}
+
+/* Cosmic Nebula Effect */
+.cosmic-nebula {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(138, 43, 226, 0.15) 0%, transparent 30%),
+    radial-gradient(circle at 80% 70%, rgba(65, 105, 225, 0.15) 0%, transparent 30%);
+  z-index: -9;
+}
+
+/* Planets */
+.planet {
+  position: fixed;
+  border-radius: 50%;
+  z-index: -8;
+}
+
+.planet1 {
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle at 30% 30%, #8b6bff, #3f2b96);
+  top: 15%;
+  right: 10%;
+  box-shadow: 0 0 30px rgba(139, 107, 255, 0.6), inset 0 0 20px rgba(0, 0, 0, 0.5);
+  animation: float 15s infinite ease-in-out;
+}
+
+.planet2 {
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle at 40% 40%, #fc466b, #3f5efb);
+  bottom: 10%;
+  left: 5%;
+  box-shadow: 0 0 40px rgba(252, 70, 107, 0.6), inset 0 0 30px rgba(0, 0, 0, 0.7);
+  animation: float 20s infinite ease-in-out reverse;
+}
+
+/* Saturn-like planet with rings */
+.planet3 {
+  width: 70px;
+  height: 70px;
+  background: radial-gradient(circle at 60% 40%, #f5d547, #f57b42);
+  box-shadow: 0 0 25px rgba(245, 123, 66, 0.5);
+  top: 60%;
+  right: 20%;
+  animation: float 18s infinite ease-in-out 5s;
+}
+
+.planet3::before {
+  content: '';
+  position: absolute;
+  width: 120px;
+  height: 25px;
+  background: rgba(245, 213, 71, 0.2);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(30deg);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(245, 213, 71, 0.5);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+/* Multiple Shooting Stars */
+.shooting-star {
+  position: fixed;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 0 10px 2px white;
+  top: 0;
+  left: -100px;
+  z-index: -7;
+  animation: shootingStar 8s linear infinite;
+}
+
+.shooting-star:nth-child(1) {
+  top: 10%;
+  animation-delay: 0s;
+}
+
+.shooting-star:nth-child(2) {
+  top: 30%;
+  animation-delay: 3s;
+}
+
+.shooting-star:nth-child(3) {
+  top: 70%;
+  animation-delay: 5s;
+}
+
+@keyframes shootingStar {
+  0% {
+    transform: translateX(0) translateY(0) rotate(45deg) scale(0);
+    opacity: 0;
+  }
+  10% {
+    transform: translateX(100px) translateY(100px) rotate(45deg) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(calc(100vw + 100px)) translateY(calc(100vh + 100px)) rotate(45deg) scale(0.5);
+    opacity: 0;
+  }
+}
+
+/* Footer exclusion */
+footer {
+  position: relative;
+  z-index: 1;
+  background-color: #0a0a2a;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Page Title with Gradient and Animation */
+.page-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 4rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #e9e62d;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-weight: 800;
+  background: linear-gradient(45deg, #3edaff, #a945ff, #ff4e50);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientText 5s ease infinite;
+  padding-bottom: 15px;
+  position: relative;
+  text-shadow: 0 0 20px rgba(62, 217, 255, 0.7);
+}
+
+@keyframes gradientText {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.page-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 4px;
+  background: linear-gradient(90deg, #3edaff, #a945ff);
+  border-radius: 2px;
+}
+
+/* Section Styling */
+section {
+  margin-bottom: 80px;
+}
+
+.section-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 2rem 0;
+  color: #2be262;
+  position: relative;
+  padding-bottom: 15px;
+  font-weight: 600;
+  text-shadow: 0 0 8px rgba(138, 43, 226, 0.5);
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(90deg, #19dcea, #b22cff);
+  border-radius: 2px;
+}
+
+/* Team Member Cards */
+.team-member {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem;
+  padding: 1.5rem;
+  background: rgba(10, 10, 42, 0.7);
+  border-radius: 15px;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(138, 43, 226, 0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Glass card hover effects */
+.team-member:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(138, 43, 226, 0.4);
+}
+
+/* Card backgrounds with gradients */
+.team-member::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(62, 218, 255, 0.05), rgba(169, 69, 255, 0.05));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.team-member:hover::before {
+  opacity: 1;
+}
+
+/* Member Image Styling */
+.member-image-container {
+  position: relative;
+  border-radius: 50% !important;
+  overflow: hidden !important;
+  margin-bottom: 1rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  /* Force equal width and height to ensure circle */
+  aspect-ratio: 1/1;
+}
+
+/* Different sizes and borders for different roles */
+.secretary .member-image-container {
+  width: 280px;
+  height: 280px;
+  border: 4px solid #3edaff;
+}
+
+.joint-secretary .member-image-container {
+  width: 220px;
+  height: 220px;
+  border: 3px solid #a945ff;
+}
+
+.convener .member-image-container {
+  width: 180px;
+  height: 180px;
+  border: 2px solid #fc466b;
+}
+
+/* New styles for Chairperson, Cultural Secretary, and Developer */
+.chairperson .member-image-container,
+.cultural-secretary .member-image-container,
+.developer .member-image-container {
+  width: 280px;
+  height: 280px;
+  border-radius: 50% !important;
+  overflow: hidden !important;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  aspect-ratio: 1/1;
+}
+
+/* Apply border colors for the new roles */
+.chairperson .member-image-container {
+  border: 4px solid #ff9e00; /* Orange border */
+}
+
+.cultural-secretary .member-image-container {
+  border: 4px solid #00e676; /* Green border */
+}
+
+.developer .member-image-container {
+  border: 4px solid #00b0ff; /* Blue border */
+}
+
+.member-image {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  border-radius: 50% !important;
+}
+
+.team-member:hover .member-image {
+  transform: scale(1.1);
+}
+
+/* Glow effect on hover */
+.glow-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.team-member:hover .glow-effect {
+  opacity: 1;
+}
+
+/* Different glow colors for different roles */
+.secretary .glow-effect {
+  box-shadow: 0 0 30px 8px rgba(62, 218, 255, 0.7);
+}
+
+.joint-secretary .glow-effect {
+  box-shadow: 0 0 25px 6px rgba(169, 69, 255, 0.7);
+}
+
+.convener .glow-effect {
+  box-shadow: 0 0 20px 5px rgba(252, 70, 107, 0.7);
+}
+
+/* Glow effects for new roles */
+.chairperson .glow-effect {
+  box-shadow: 0 0 30px 8px rgba(255, 158, 0, 0.7);
+}
+
+.cultural-secretary .glow-effect {
+  box-shadow: 0 0 30px 8px rgba(0, 230, 118, 0.7);
+}
+
+.developer .glow-effect {
+  box-shadow: 0 0 30px 8px rgba(0, 176, 255, 0.7);
+}
+
+/* Text styling */
+.member-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0.5rem 0;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.member-position {
+  font-size: 1rem;
+  color: #a0a0a0;
+  font-family: 'Exo 2', sans-serif;
+}
+
+/* Layout Containers */
+.secretary-container {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+/* Joint Secretaries Section */
+.joint-secretaries-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.single-row {
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  scrollbar-width: none; /* For Firefox */
+}
+
+.single-row::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Opera */
+}
+
+/* Conveners Section */
+.conveners-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.grid-3x3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Special effects for team members */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Add interactive hover states for cards */
+.team-member .social-links {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+.team-member:hover .social-links {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Add starfield particle overlay */
+.star-particles {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: -5;
+}
+
+/* Add constellation lines */
+.constellation {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -6;
+  opacity: 0.2;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 800 800'%3E%3Cg fill='none' stroke='%23404' stroke-width='1'%3E%3Cpath d='M769 229L1037 260.9M927 880L731 737 520 660 309 538 40 599 295 764 126.5 879.5 40 599-197 493 102 382-31 229 126.5 79.5-69-63'/%3E%3Cpath d='M-31 229L237 261 390 382 603 493 308.5 537.5 101.5 381.5M370 905L295 764'/%3E%3Cpath d='M520 660L578 842 731 737 840 599 603 493 520 660 295 764 309 538 390 382 539 269 769 229 577.5 41.5 370 105 295 -36 126.5 79.5 237 261 102 382 40 599 -69 737 127 880'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Atmospheric fog effect */
+.space-fog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -7;
+  background: 
+    linear-gradient(125deg, rgba(255, 0, 128, 0.03) 0%, transparent 40%),
+    linear-gradient(245deg, rgba(0, 128, 255, 0.03) 0%, transparent 40%);
+  filter: blur(40px);
+}
+
+/* Team member role badges */
+.role-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.secretary .role-badge {
+  background: linear-gradient(45deg, #3edaff, #0095ff);
+}
+
+.joint-secretary .role-badge {
+  background: linear-gradient(45deg, #a945ff, #6b00ff);
+}
+
+.convener .role-badge {
+  background: linear-gradient(45deg, #fc466b, #ff4e50);
+}
+
+/* Role badge backgrounds for new roles */
+.chairperson .role-badge {
+  background: linear-gradient(45deg, #ff9e00, #ff6d00);
+}
+
+.cultural-secretary .role-badge {
+  background: linear-gradient(45deg, #00e676, #00c853);
+}
+
+.developer .role-badge {
+  background: linear-gradient(45deg, #00b0ff, #0091ea);
+}
+
+.team-member:hover .role-badge {
+  opacity: 1;
+}
+
+/* Team member info reveal animation */
+.member-info {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.team-member:hover .member-info {
+  max-height: 100px;
+  opacity: 1;
+}
+
+/* Image container overlay effect */
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.team-member:hover .image-overlay {
+  opacity: 1;
+}
+
+/* Loading animation for page elements */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.secretary-container,
+.joint-secretaries-container,
+.conveners-container {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.joint-secretaries-container {
+  animation-delay: 0.2s;
+}
+
+.conveners-container {
+  animation-delay: 0.4s;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .page-title {
+    font-size: 3.5rem;
+  }
+  
+  .section-title {
+    font-size: 2.2rem;
+  }
+  
+  .secretary .member-image-container {
+    width: 240px;
+    height: 240px;
+  }
+  
+  .joint-secretary .member-image-container {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .convener .member-image-container {
+    width: 160px;
+    height: 160px;
+  }
+  
+  .chairperson .member-image-container,
+  .cultural-secretary .member-image-container,
+  .developer .member-image-container {
+    width: 240px;
+    height: 240px;
+  }
+}
+
+@media (max-width: 992px) {
+  .page-title {
+    font-size: 3rem;
+  }
+  
+  .grid-3x3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .secretary .member-image-container {
+    width: 220px;
+    height: 220px;
+  }
+  
+  .joint-secretary .member-image-container {
+    width: 180px;
+    height: 180px;
+  }
+  
+  .chairperson .member-image-container,
+  .cultural-secretary .member-image-container,
+  .developer .member-image-container {
+    width: 220px;
+    height: 220px;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 2.5rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .single-row {
+    flex-wrap: wrap;
+  }
+  
+  .joint-secretary .member-image-container,
+  .convener .member-image-container {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .chairperson .member-image-container,
+  .cultural-secretary .member-image-container,
+  .developer .member-image-container {
+    width: 200px; /* Larger than other roles at this breakpoint */
+    height: 200px;
+  }
+}
+
+@media (max-width: 576px) {
+  .page-title {
+    font-size: 2rem;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .grid-3x3 {
+    grid-template-columns: 1fr;
+  }
+  
+  .joint-secretary .member-image-container,
+  .convener .member-image-container,
+  .secretary .member-image-container {
+    width: 140px;
+    height: 140px;
+  }
+  
+  .chairperson .member-image-container,
+  .cultural-secretary .member-image-container,
+  .developer .member-image-container {
+    width: 180px; /* Significantly larger than other roles (140px) at this breakpoint */
+    height: 180px;
+  }
+  
+  .team-member {
+    padding: 1rem;
+  }
+  
+  /* Optional: Adjust container for specific roles */
+  .chairperson,
+  .cultural-secretary,
+  .developer {
+    padding: 1.2rem;
+  }
+}
+
+/* Animation for cosmic objects */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+/* Additional cosmic objects */
+.cosmic-object {
+  position: fixed;
+  border-radius: 50%;
+  background: white;
+  filter: blur(1px);
+  animation: twinkle 3s infinite ease-in-out;
+}
+
+.cosmic-object:nth-child(1) {
+  width: 3px;
+  height: 3px;
+  top: 25%;
+  left: 15%;
+  animation-delay: 0s;
+}
+
+.cosmic-object:nth-child(2) {
+  width: 2px;
+  height: 2px;
+  top: 45%;
+  right: 25%;
+  animation-delay: 1s;
+}
+
+.cosmic-object:nth-child(3) {
+  width: 4px;
+  height: 4px;
+  bottom: 30%;
+  left: 40%;
+  animation-delay: 2s;
+}

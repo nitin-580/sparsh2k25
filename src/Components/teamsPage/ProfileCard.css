@@ -1,0 +1,301 @@
+/* .card {
+  width: 19rem;
+  height: 26rem;
+  border-radius: 2rem;
+  background: #f5f5f5;
+  padding: 2rem 1.5rem;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+  margin-left: 2rem;
+  margin-top: 2rem;
+  margin-right: 2rem; */
+/* margin: auto auto; */
+/* }
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+} */
+
+/*Image*/
+/* .card-avatar {
+  --size: 10rem; */
+/* background: linear-gradient(to top, #f1e1c1 0%, #fcbc97 100%); */
+/* width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+} */
+
+/*Card footer*/
+/* .card-social {
+  display: inline-block;
+  transform: translateY(200%);
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  padding-left: 0;
+  opacity: 0;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.card-social__item {
+  list-style: none;
+} */
+
+/* .card-social__item svg {
+    display: block;
+    height: 18px;
+    width: 18px;
+    fill: #515f65;
+    cursor: pointer;
+    transition: fill 0.2s ease, transform 0.2s ease;
+  } */
+
+/*Text*/
+/* .card-title {
+  color: #333;
+  font-size: 2.5rem;
+  font-weight: 600;
+  line-height: 2rem;
+  text-align: center;
+  margin-bottom: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.card-subtitle {
+  color: black;
+  font-size: 1.3rem;
+  font-weight: 300;
+  text-align: center;
+  margin-top: -0.4rem;
+}
+
+/*Hover*/
+/* .card:hover {
+  box-shadow: 0 8px 50px #23232333;
+}
+
+.card:hover .card-info {
+  transform: translateY(-5%);
+}
+
+.card:hover .card-social {
+  transform: translateY(50%);
+  opacity: 1;
+} */
+
+/* .card-social__item svg:hover {
+    fill: #232323;
+    transform: scale(1.1);
+  } */
+
+/* .card-avatar:hover {
+  transform: scale(1.1);
+}
+
+.card-social__item {
+  font-size: 1.8rem;
+  transition: all 0.4s;
+}
+
+.card-social__item:hover {
+  transform: scale(1.4);
+}
+
+.card-social__link {
+  text-decoration: none;
+  color: black;
+}
+
+.card-social__link:hover {
+  color: palevioletred;
+}
+
+.cardSpecial {
+  margin-top: 10rem;
+  margin-bottom: 5rem;
+}
+
+.cardSmall {
+  height: 22rem;
+}
+
+.joints__parent {
+  display: flex;
+  flex-direction: column;
+} */
+
+/* dont touch this body tag */
+
+/* body { */
+  /* font-family: tahoma; */
+  /* height: 100vh; */
+  /* background-image: url(https://picsum.photos/g/3000/2000); */
+  /* background-size: cover; */
+  /* background-position: center; */
+  /* display: flex; */
+  /* align-items: center; */
+  /* width: 100vw; */
+  /* overflow-x: hidden; */
+/* } */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;500;700;900&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Syne:wght@400;500;600;700;800&display=swap');
+.our-team {
+  padding: 2rem 1rem;
+  margin-bottom: 30px;
+  background: -webkit-linear-gradient(93.35deg, #65FFA3 0%, #219FFF 100%);
+  margin: -10px;
+  background-color: #f7f5ec;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  border-radius: 0.7rem;
+  height: 18rem;
+  width: 12.5rem;
+  border: 1px solid black;
+  color: #213e3b;
+  /* box-shadow: 0 0 5px #21ebff, 0 0 5px #21ebff inset; */
+  box-shadow: 0px 0px 17px 6px black;
+  /* background: rgba(255, 255, 255, 0.45);
+  -webkit-backdrop-filter: blur(25px);
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.225); */
+  /* background: rgba(229, 90, 254, 0.79);
+  background: -webkit-linear-gradient(
+    0deg,
+    rgba(229, 90, 254, 0.79) 0%,
+    #6a47ff 100%
+  );
+  background: linear-gradient(0deg, rgba(229, 90, 254, 0.79) 0%, #6a47ff 100%); */
+  background-color: rgb(188, 255, 255);
+}
+
+.our-team .picture {
+  display: inline-block;
+  height: 130px;
+  width: 130px;
+  /* margin-bottom: 50px; */
+  z-index: 1;
+  position: relative;
+}
+
+.our-team .picture::before {
+  content: "";
+  width: 100%;
+  height: 0;
+  border-radius: 50%;
+  /* background-color: #41aea9; */
+  background: linear-gradient(93.35deg, gray 0%, #1e1e1e 100%) ;
+  position: absolute;
+  bottom: 135%;
+  right: 0;
+  left: 0;
+  opacity: 0.9;
+  transform: scale(3);
+  transition: all 0.3s linear 0s;
+}
+
+.our-team:hover .picture::before {
+  height: 100%;
+}
+
+.our-team .picture::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  /* background-color: #0ff; */
+  /* box-shadow: 0px 0px 40px 10px #0ff; */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.our-team .picture img {
+  width: 85%;
+  height: 100%;
+  border-radius: 50%;
+  transform: scale(1);
+  transition: all 0.9s ease 0s;
+  background-image: url('https://www.google.com/url?sa=i&url=https%3A%2F%2F1fid.com%2Fdefault-profile-pictures%2F&psig=AOvVaw0stkNC7mzUuH__xQEdPkWT&ust=1677913563132000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCLCYuKKZv_0CFQAAAAAdAAAAABAD')
+}
+
+.our-team:hover .picture img {
+  box-shadow: 0 0 0 14px #f7f5ec;
+  transform: scale(0.7);
+}
+
+.our-team .name {
+  font-size: 1.3rem;
+  margin-top: 0rem;
+  font-family: "syne";
+  min-height: 50px;
+  /* text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff,
+    0 0 40px rgb(238, 45, 45), 0 0 80px rgb(243, 149, 149),
+    0 0 90px rgb(243, 149, 149), 0 0 100px rgb(243, 149, 149),
+    0 0 150px rgb(243, 149, 149); */
+}
+
+.our-team .title {
+  padding-top: 15px;
+  display: block;
+  font-size: 15px;
+  font-weight: 400;
+  color: #4e5052;
+  text-transform: capitalize;
+  font-family : "inter"
+}
+
+.our-team .social {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: #1369ce;
+  position: absolute;
+  bottom: -100px;
+  left: 0;
+  transition: all 0.5s ease 0s;
+  background: linear-gradient(93.35deg, gray 0%, #1e1e1e 100%) ;
+}
+
+.our-team:hover .social {
+  bottom: 0;
+}
+
+.our-team .social li {
+  display: inline-block;
+}
+
+.our-team .social li a {
+  display: block;
+  padding: 10px;
+  font-size: 17px;
+  color: white;
+  transition: all 0.3s ease 0s;
+  text-decoration: none;
+}
+
+.our-team .social li a:hover {
+  color: #1369ce;
+  background-color: #f7f5ec;
+}
+
+.profile__card {
+  margin: 2rem;
+}
+
+.cardSmall {
+  /* width: 25rem !important; */
+  height: 50vh;
+  width: fit-content;
+}
+
+.cardSpecial {
+  margin-bottom: 5rem;
+}

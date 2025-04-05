@@ -1,0 +1,94 @@
+
+
+.parent__container {
+  width: 100%;
+  background: #1e1e1e;
+}
+.jcas{
+  display: flex;
+  justify-content: center;
+}
+.Conveners{
+  display: flex;
+  justify-content: center;
+}
+
+.Infra{
+  display: flex;
+  justify-content: center;
+}
+
+.InfraHead{
+  display: flex;
+  justify-content: center;
+}
+
+.InfraCoheads{
+  display: flex;
+  justify-content: center;
+}
+.WebdevAdvisor{
+  display: flex;
+  justify-content: center;
+}
+
+.WebdevHead{
+  display: flex;
+  justify-content: center;
+}
+
+.WebdevCoHead{
+  display: flex;
+  justify-content: center;
+}
+
+.row{
+  display: flex;
+  justify-content: center;
+}
+
+.joints__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 4rem;
+}
+
+.joints__parent {
+  display: flex;
+  flex-direction: column;
+}
+
+.cas__container {
+  display: flex;
+  justify-content: center;
+  padding-top: 8rem;
+  /* margin-left: 6rem; */
+}
+
+.heading {
+  font-size: 3rem;
+  font-family: 'monsterrat';
+  text-align: center;
+  color: whitesmoke;
+}
+
+@media screen and (max-width: 720px) {
+  .heading {
+    font-size: 2rem;
+    font-family: 'monsterrat';
+    text-align: center;
+    color: whitesmoke;
+  }
+}
+
+
+.LeftArrow{
+ 
+  margin-top: 110px;
+}
+
+.RightArrow{
+ 
+  margin-top: 110px;
+}
